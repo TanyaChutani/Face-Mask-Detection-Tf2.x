@@ -56,6 +56,18 @@ On any given test image of a crowd based setting of people, our final mask detec
 ### 1. Results obtained on the classification model:
 - Loss: 0.0182
 - F1 score 0.99
+
+<br>
+
+![Crowded_Scenario 1](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img1.png/)
+![Crowded_Scenario 2](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img2.png/)
+![Crowded_Scenario 3](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img3.png/)
+![Crowded_Scenario 4](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img4.png/)
+![Crowded_Scenario 5](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img5.png/)
+![Crowded_Scenario 5](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img6.png/)
+
+<br>
+
 ### 2. How does this approach fare in these conditions?
 Using the before mentioned approach of face detection and classification of the detected face crops as wearing a mask or not works pretty well in crowded conditions. This is really important because the use cases for the regions of surveillance may include metropolitan complexes, metro stations and dense marketplaces. These conditions do not provide an ideal scenario for just any face detection algorithm, and it was really necessary that the right choice was made.
 ### 3. Choice of RetinaNet over MT-CNN, Haar Cascade and HOG:
