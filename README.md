@@ -57,6 +57,7 @@ On any given test image of a crowd based setting of people, our final mask detec
 - Loss: 0.0182
 - F1 score 0.99
 
+### 2. Results on test images
 <br>
 
 ![Crowded_Scenario 1](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Images/test_img1.png/)
@@ -68,16 +69,19 @@ On any given test image of a crowd based setting of people, our final mask detec
 
 <br>
 
-### 2. How does this approach fare in these conditions?
+### 3. Results on test video
+![](https://github.com/TanyaChutani/Face-Mask-Detection-Tf2.0/blob/master/Results/Test%20Video/test_video_gif.gif)
+
+### 4. How does this approach fare in these conditions?
 Using the before mentioned approach of face detection and classification of the detected face crops as wearing a mask or not works pretty well in crowded conditions. This is really important because the use cases for the regions of surveillance may include metropolitan complexes, metro stations and dense marketplaces. These conditions do not provide an ideal scenario for just any face detection algorithm, and it was really necessary that the right choice was made.
-### 3. Choice of RetinaNet over MT-CNN, Haar Cascade and HOG:
+### 5. Choice of RetinaNet over MT-CNN, Haar Cascade and HOG:
 While deciding upon the face detection algorithm to be used as part of my proposed solution of face detection, a pre-trained RetinaNet was chosen as the one which could, with the highest recall and precision, predict the number of faces in a crowded setting.
 In an uncontrolled environment, accurate face localization remains a challenge, and I needed a model which could efficiently predict, with a very high level of certainty- the people who are not wearing a mask in a crowded setting for the mask detection algorithm to work effectively.<br>
 While they work good in general settings, MT-CNN (Multi Task Cascaded Convolutional Neural Network) and classical computer vision algorithms such as Haar Cascade failed to work well in an uncontrolled environment of a crowded setting with people and in dense clusters. RetinaNet with a ResNet backbone and feature pyramid network for feature extraction works even well than some single shot detectors like Single Shot MultiBox Detector and has accuracy on par with two stage detectors like Faster RCNN, and handles foreground-background class imbalance using a modified version of Focal Loss. The class imbalance was the major issue in other single shot detectors, and helps RetinaNet have a lower loss due to easy examples while focusing on hard ones.
 <br> This face detection model works well in crowded settings, which are bound to have large number of people with 'smaller' faces and with varying scale than in a general setting. On the testing examples, it can be seen that the faces detected vary in scale but are detected with a very high recall and precision.
-### 4. Classification model: Choice of architecture
+### 6. Classification model: Choice of architecture
 - Transfer learning was employed to use the model weights of the Xception model.
 - Learning hyperparameters such as learning rate were chosen in an iterative manner, with recommendations taken on choices of values based on available architecture.
-### 5. Criterion for evaluation: F1-score
+### 7. Criterion for evaluation: F1-score
 - F1-score is the harmonic mean of precision and recall. It is chosen as the criterion for evaluation for the classification model. Being bound between 0 and 1, F1-score reaches its best value at 1 and worst at 0.
 - My model achieves a high F1-score which shows that it can perform well in real world scenarios to classify with certainty, the mask and without mask categories on face crops.
